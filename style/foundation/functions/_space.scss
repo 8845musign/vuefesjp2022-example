@@ -1,0 +1,13 @@
+// ---------------------------
+// Space
+// ---------------------------
+
+// スペースのスケールから値を返す
+// ex. margin-top: space(3); -> margin-top: 12px;
+@function space($point) {
+  @if map-has-key($yesod-spacing-scale, $point) {
+    @return map-get($yesod-spacing-scale, $point);
+  } @else {
+    @error "ERROR: Specified point does not exist in the spacing scale";
+  }
+}
